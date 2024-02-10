@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title >Will You Be My Valentine?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: pink;
+      background-color: black;
+    }
+    #valentine-button {
+      font-size: 25px;
+      padding: 20px 35px;
+      border: none;
+      background-color: #ff4d4d;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #valentine-button:hover {
+      background-color: #4d94ff;
+    }
+    #no-button {
+      font-size: 16px;
+      background-color: #ff6666;
+      border-radius: 5px;
+      border: none;
+      padding: 15px 30px;
+      
+    }
+    .gif-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    max-width: 50px;
+    overflow: hidden;
+  }
+
+  .gif-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+<body>
+  <h1>Will You Be My Valentine?</h1>
+  <div class="tenor-gif-embed" data-postid="20366214" data-share-method="host" data-aspect-ratio="1.06312" data-width="100%"><a href="https://tenor.com/view/milk-and-mocha-love-heart-cute-bear-gif-20366214">Milk And Mocha Love GIF</a>from <a href="https://tenor.com/search/milk+and+mocha-gifs">Milk And Mocha GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  <br><br>
+  <button id="valentine-button">Yes</button>
+  <button id="no-button">No</button>
+
+  <script>
+    // Event listener for the "Yes" button
+    document.getElementById('valentine-button').addEventListener('click', function() {
+        // Assuming you want to navigate to a new page upon clicking "Yes"
+        window.location.href = 'newpage.html';
+      });
+  
+      // Event listener for the "No" button
+      document.getElementById('no-button').addEventListener('click', function() {
+        // Increase font size of the "Yes" button
+        document.getElementById('valentine-button').style.fontSize = parseInt(window.getComputedStyle(document.getElementById('valentine-button')).fontSize) + 6 + 'px';
+        // Set different texts each time "No" is pressed
+        const noMessages = ["What's wrong?", "Just say yes.", "Pleaseeee.", "I love you.","Love's potential awaits.","Yet to decide.","Ki somossa?","Pweeese","Ektibaar ha bolo"];
+        const randomIndex = Math.floor(Math.random() * noMessages.length);
+        document.getElementById('no-button').innerText = noMessages[randomIndex];
+      });
+  </script>
+</body>
+</html>
